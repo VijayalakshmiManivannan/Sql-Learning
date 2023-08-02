@@ -1,0 +1,29 @@
+USE testDB;
+CREATE TABLE Persons(
+PersonID INT PRIMARY KEY,
+LastName Varchar(255),
+FirstName Varchar(255),
+Address Varchar(255),
+City Varchar(255)
+);
+DESCRIBE Persons;
+DROP TABLE Persons;
+DROP TABLE if exists Persons;
+SHOW TABLES;
+ALTER TABLE Persons ADD DateOfBirth DATE;
+DESCRIBE Persons;
+ALTER TABLE Persons DROP DateOfBirth;
+CREATE TABLE Students(
+Id INT NOT NULL,
+Name Varchar(255),
+Gpa DECIMAL(3,2)
+);
+DESCRIBE Students;
+INSERT INTO Students VALUES(1, "Braga", 8.0);
+DESCRIBE Students;
+SELECT * FROM Students;
+INSERT INTO Students VALUES
+(2,"Barathi",8.2),
+(3,"Chitra", 7.5);
+SELECT * FROM Students;
+SHOW DATABASES;

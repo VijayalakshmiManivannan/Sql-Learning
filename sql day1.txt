@@ -1,0 +1,57 @@
+DAY 1(AUG 1/2023)
+
+SQL(DDL- Data Definition Language)
+===
+1)CREATE DATABASE
+===============
+Syntax:
+         CREATE DATABASE databasename;
+EX:
+         CREATE DATABASE testDB;
+--------------------------------------
+2)DROP DATABASE(DELETE)
+=====================
+Syntax: 
+        DROP DATABASE databasename;
+EX:
+        DROP DATABASE testDB;
+---------------------------------------------------------------------------------------------------------------------
+3)CREATE TABLE
+======================================================================================================================
+Syntax:
+        CREATE TABLE table_name(
+            Column_name1 datatype,
+            Column_name2 datatype,
+            Column_name3 datatype,
+        );
+EX:
+        CREATE TABLE Students(
+            Id INT,
+            Name Varchar(255),
+            Gpa DECIMAL(3,2)
+        );
+DROP TABLE:
+=================================================================================================================
+Syntax:  DROP TABLE table_name;
+ EX   :  DROP TABLE Students;
+        
+--------------------------------------------------------------------------------------------------------------------------
+4)ALTER TABLE( Add, Drop, Rename Columns, and Alter/Modify datatypes)
+======================================================================
+1) ADD:
+--------
+ Syntax:
+         
+         ALTER TABLE table_name ADD Column_name datatype;
+EX:      
+         ALTER TABLE Students ADD Department Varchar(255);
+2) DROP:
+---------
+ Syntax:
+         ALTER TABLE table_name DROP Column_name;
+ EX:
+         ALTER TABLE Students DROP COLUMN Department;
+
+
+ 
+         
