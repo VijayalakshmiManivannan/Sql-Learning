@@ -1,0 +1,224 @@
+DAY 1(AUG 1/2023)
+
+SQL(DDL- Data Definition Language)
+===
+1)CREATE DATABASE
+===============
+Syntax:
+         CREATE DATABASE databasename;
+EX:
+         CREATE DATABASE testDB;
+--------------------------------------
+2)DROP DATABASE(DELETE)
+=====================
+Syntax: 
+        DROP DATABASE databasename;
+EX:
+        DROP DATABASE testDB;
+---------------------------------------------------------------------------------------------------------------------
+3)CREATE TABLE( Creating new table)
+======================================================================================================================
+Syntax:
+        CREATE TABLE table_name(
+            Column_name1 datatype,
+            Column_name2 datatype,
+            Column_name3 datatype,
+        );
+EX:
+        CREATE TABLE Students(
+            Id INT,
+            Name Varchar(255),
+            Gpa DECIMAL(3,2)
+        );
+=================================================================================
+DROP TABLE:
+=================================================================================
+Syntax:  DROP TABLE table_name;
+ EX   :  DROP TABLE Students;
+        
+----------------------------------------------------------------------------------
+4)ALTER TABLE( Add, Drop, Rename Columns, and Alter/Modify datatypes on Existing table.
+======================================================================
+1) ADD:
+--------
+ Syntax:
+         
+         ALTER TABLE table_name ADD Column_name datatype;
+EX:      
+         ALTER TABLE Students ADD Department Varchar(255);
+2) DROP:
+---------
+ Syntax:
+         ALTER TABLE table_name DROP Column_name;
+ EX:
+         ALTER TABLE Students DROP COLUMN Department;
+
+
+3)ALTER TABLE - RENAME COLUMN
+------------------------------
+Syntax:
+        ALTER TABLE table_name
+        RENAME COLUMN Old_name TO new_name;
+4)ALTER TABLE - ALTER/MODIFY DATATYPE
+--------------------------------------
+1.SQL Server/MS Access
+-----------------------
+    ALTER TABLE table_name
+    ALTER COLUMN Column_name datatype;
+
+2.MySQL/Oracle(prior version)
+------------------------------
+ALTER TABLE table_name
+MODIFY COLUMN Column_name datatype;
+
+3.Oracle 10G and Later
+----------------------
+ALTER TABLE table_name
+MODIFY Column_name datatype;
+=========================================================================
+5)UPDATE Statement
+------------------
+Syntax:
+       UPDATE table_name
+       SET column1=value1,column2=value2
+       WHERE condition;
+
+example:
+        UPDATE Employees
+        SET job_desc='Analyst'
+        WHERE job_desc='Engineer';
+===============================================================================
+6)DELETE Statement
+------------------
+Syntax:
+       DELETE FROM table_name WHERE condition;
+
+example:
+       DELETE FROM Employees WHERE Emp_Id=12;
+
+=================================================================================
+7)DISTINCT Statement(select different values)
+---------------------------------------------
+Syntax:
+        SELECT DISTINCT column1, column2,....
+        FROM table_name;
+
+example:
+        SELECT DISTINCT job_desc
+        FROM Employees;
+
+=================================================================================
+8)ORDER BY Keyword(Syntax doubt)
+------------------
+Syntax:
+        SELECT column1,column2,...
+        FROM table_name
+        ORDER BY column1, column2,....ASC/DESC;
+Example:
+        
+        SELECT * FROM Employees
+        ORDER BY EName, Salary;
+
+****** CUSTOM ORDER*** 
+-----------------------
+Example 
+
+         SELECT * FROM Employees
+         ORDER BY ( CASE job_desc
+         WHEN 'CEO' THEN 1
+         WHEN 'MANAGER' THEN 2
+         WHEN 'HR' THEN 3
+         WHEN 'ANALYST' THEN 4
+         WHEN 'SALES' THEN 5
+         ELSE 100 END
+         );
+           
+=================================================================================
+9)INSERT INTO Statement
+-------------------
+Syntax:
+         INSERT INTO table_name(column1, column2...) 
+         VALUES(value1,value2,....)
+=============================================================================
+
+
+SQL Query Types
+-----------------
+SELECT Statement	Retrieve records from a table
+SELECT LIMIT Statement	Retrieve records from a table and limit results
+SELECT TOP Statement	Retrieve records from a table and limit results
+INSERT Statement	Insert records into a table
+UPDATE Statement	Update records in a table
+DELETE Statement	Delete records from a table
+TRUNCATE TABLE Statement	Delete all records from a table (no rollback)
+UNION Operator	Combine 2 result sets (removes duplicates)
+UNION ALL Operator	Combine 2 result sets (includes duplicates)
+INTERSECT Operator	Intersection of 2 result sets
+MINUS Operator	Result set of one minus the result set of another
+EXCEPT Operator	Result set of one minus the result set of another
+============================================================================
+SQL FUNCTIONS(Aggregate Functions)
+----------------------------------
+1) COUNT()
+----------
+Syntax:
+         SELECT COUNT(Column_name)
+         FROM table_name
+         WHERE condition;
+Example:
+     1)    SELECT COUNT(*) |   (*=all)
+           FROM Employees; |
+     2)    SELECT COUNT(*)
+           FROM Employee
+           WHERE job_desc;
+
+ ---------------------------------------
+
+2)AVG()
+-------
+Syntax:
+        SELECT AVG(Coumn_name)
+        FROM table_name
+        WHERE condition;
+
+Example:
+        1) SELECT AVG(Salary)
+           FROM Employees
+           WHERE job_desc='manager';
+-------------------------------------------
+3)SUM()
+-------
+Syntax:
+        SELECT SUM(column_name)
+        FROM table_name
+        WHERE condition;
+Example:
+    1) SELECT SUM(Salary)
+       FROM Employees
+       WHERE job_desc='Analyst';
+         
+-------------------------------------------
+4) MAX()
+---------
+Syntax:
+        SELECT MAX(column_name)
+        FROM Table_name
+        WHERE condition;
+Example:
+     1)   SELECT MAX(Salary)
+          FROM Employees;
+     2)   SELECT MAX(Salary)
+          FROM Employees
+          WHERE job_desc='Manager';
+-------------------------------------------
+5)MIN()
+-------
+Syntax:
+        SELECT MIN(column_name)
+        FROM table_name
+        WHERE condtion;
+Examaple:
+       1)  SELECT MIN(Salary)
+           FROM Employees        
+=================================================================================
+         
