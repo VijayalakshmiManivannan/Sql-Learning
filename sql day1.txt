@@ -219,6 +219,7 @@ Syntax:
         WHERE condtion;
 Examaple:
        1)  SELECT MIN(Salary)
-           FROM Employees        
+           FROM Employees;        
 =================================================================================
+as on aug 04/2023
          

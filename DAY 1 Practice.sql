@@ -143,6 +143,8 @@ from Employees
 where job_desc='MANAGER';
 select min(Salary)
 from employees;
+select * from Employees;
+
 
 
 
